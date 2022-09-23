@@ -10,7 +10,7 @@ class MyBot(commands.Bot):
         super().__init__(
             command_prefix = ':',
             intents = discord.Intents.all(),
-            application_id = 906639102558994442
+            application_id = 1022698499294367815
         )
 
         @self.command(name = 'testConnect')
