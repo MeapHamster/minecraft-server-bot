@@ -3,7 +3,7 @@ import discord
 from discord.ext import commands, tasks
 from Utilities.HandlePurchaseCheck import *
 
-token = ''
+token = 'MTAyMjY5ODQ5OTI5NDM2NzgxNQ.GOJIfZ.Iqo8Bye8IXZbgTtV7SikSB3-SnYLEdQriogbnc'
 
 class MyBot(commands.Bot):
     def __init__(self):
