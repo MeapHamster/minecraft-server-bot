@@ -11,6 +11,7 @@ async def cmd_StopServer_Invoked(Member, interaction):
         print("Stopping Server...")
 
         pyautogui.write('stop', interval = .1)
+        pyautogui.press('enter')
         
         print("Server Terminated")
 
