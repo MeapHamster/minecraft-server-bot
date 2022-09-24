@@ -2,7 +2,7 @@ import discord
 import pyautogui
 import time
 
-async def cmd_RunServer_Invoked(Member, interaction):
+async def cmd_StopServer_Invoked(Member, interaction):
 
     if Member.guild_permissions.administrator == True:
 
