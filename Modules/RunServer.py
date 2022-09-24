@@ -3,9 +3,34 @@ import discord
 import time
 import os
 
+import edit_settings
+
 async def cmd_RunServer_Invoked(Member, interaction):
 
     if Member.guild_permissions.administrator == True:
+
+        # if edit_settings.getRunning() == True:
+        #     response_embed = discord.Embed(
+        #         title = 'Command running',
+        #         description = 'Please wait for the command to finish executing',
+        #         colour = discord.Colour.dark_grey()
+        #     )
+        #     await interaction.response.send_message(embed = response_embed)
+        #     return
+
+        if edit_settings.getServerStatus() == True:
+            response_embed = discord.Embed(
+                title = 'Server is running',
+                description = 'Use </stopserver:0> to terminate the server',
+                colour = discord.Colour.dark_grey()
+            )
+            await interaction.response.send_message(embed = response_embed)
+            return
+
+        edit_settings.setRunning()
+        edit_settings.setOnline()
+
+        print("Starting Server")
 
         ## Run the server here idk how to do it yet
 
@@ -23,7 +48,7 @@ async def cmd_RunServer_Invoked(Member, interaction):
             colour = discord.Colour.dark_grey()
         )
 
-        remainingTime = 60
+        remainingTime = 40
 
         # await interaction.response.send_message(content = 'Running server...')
         await interaction.response.send_message(embed = embed_1)
@@ -45,6 +70,7 @@ async def cmd_RunServer_Invoked(Member, interaction):
         
         await interaction.edit_original_response(embed = embed_2)
 
+        edit_settings.setWaiting()
 
     else:
         

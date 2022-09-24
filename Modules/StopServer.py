@@ -2,9 +2,34 @@ import discord
 import pyautogui
 import time
 
+import edit_settings
+
 async def cmd_StopServer_Invoked(Member, interaction):
 
     if Member.guild_permissions.administrator == True:
+
+        # if edit_settings.getRunning() == True:
+        #     response_embed = discord.Embed(
+        #         title = 'Command running',
+        #         description = 'Please wait for the command to finish executing',
+        #         colour = discord.Colour.dark_grey()
+        #     )
+        #     await interaction.response.send_message(embed = response_embed)
+        #     return
+
+        if edit_settings.getServerStatus() == False:
+            response_embed = discord.Embed(
+                title = 'Server is offline',
+                description = 'Use </runserver:0> to start the server',
+                colour = discord.Colour.dark_grey()
+            )
+            await interaction.response.send_message(embed = response_embed)
+            return
+
+        edit_settings.setRunning()
+        edit_settings.setOffline()
+
+        print("Stopping Server")
 
         embed_1 = discord.Embed(
             title = 'Sending Request to Terminate...',
@@ -15,7 +40,7 @@ async def cmd_StopServer_Invoked(Member, interaction):
             colour = discord.Colour.dark_grey()
         )
         embed_3 = discord.Embed(
-            title = 'Successfully Terminated Server',
+            title = 'Server Offline',
             colour = discord.Colour.dark_grey()
         )
 
@@ -42,6 +67,8 @@ async def cmd_StopServer_Invoked(Member, interaction):
 
         # await interaction.edit_original_response(content = "Successfully Terminated Server")
         await interaction.edit_original_response(embed = embed_3)
+
+        edit_settings.setWaiting()
 
     else:
         

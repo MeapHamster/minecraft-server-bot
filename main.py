@@ -1,6 +1,9 @@
 import discord
 from discord.ext import commands, tasks
 
+import settings
+settings.init()
+
 token = 'MTAyMjY5ODQ5OTI5NDM2NzgxNQ.GOJIfZ.Iqo8Bye8IXZbgTtV7SikSB3-SnYLEdQriogbnc'
 
 class MyBot(commands.Bot):
