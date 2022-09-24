@@ -1,6 +1,5 @@
 import discord
 from discord.ext import commands, tasks
-from Utilities.HandlePurchaseCheck import *
 
 token = 'MTAyMjY5ODQ5OTI5NDM2NzgxNQ.GOJIfZ.Iqo8Bye8IXZbgTtV7SikSB3-SnYLEdQriogbnc'
 
@@ -18,6 +17,7 @@ class MyBot(commands.Bot):
 
         self.initial_extentions = [
             'cogs.runserver',
+            'cogs.stopserver',
         ]
 
     async def setup_hook(self):
@@ -26,8 +26,6 @@ class MyBot(commands.Bot):
             print('Loaded ' + ext)
 
         await bot.tree.sync()
-
-        self.CheckPurchases.start()
     
     async def on_ready(self):
         print(f'{self.user} has connected to Discord')
