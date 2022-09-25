@@ -4,7 +4,7 @@ from discord.ext import commands, tasks
 import settings
 settings.init()
 
-token = 'MTAyMjY5ODQ5OTI5NDM2NzgxNQ.GOJIfZ.Iqo8Bye8IXZbgTtV7SikSB3-SnYLEdQriogbnc'
+token = 'MTAyMjY5ODQ5OTI5NDM2NzgxNQ.GwhtAL.S0Fukiidho4R-SNCkfHcoGGCA_IyQDkv2ONUNM'
 
 class MyBot(commands.Bot):
     def __init__(self):
