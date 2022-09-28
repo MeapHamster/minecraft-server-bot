@@ -4,7 +4,7 @@ from discord.ext import commands, tasks
 import settings
 settings.init()
 
-token = 'MTAyMjY5ODQ5OTI5NDM2NzgxNQ.GwhtAL.S0Fukiidho4R-SNCkfHcoGGCA_IyQDkv2ONUNM'
+token = 'token'
 
 class MyBot(commands.Bot):
     def __init__(self):
@@ -21,6 +21,7 @@ class MyBot(commands.Bot):
         self.initial_extentions = [
             'cogs.runserver',
             'cogs.stopserver',
+            'cogs.whitelist',
         ]
 
     async def setup_hook(self):
