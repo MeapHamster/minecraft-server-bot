@@ -11,7 +11,7 @@ class whitelist(commands.Cog):
 
     @app_commands.command(
         name = 'whitelist',
-        description = 'Run the Minecraft server!'
+        description = 'Add or remove a user from the whitelist!'
     )
 
     @app_commands.describe(
