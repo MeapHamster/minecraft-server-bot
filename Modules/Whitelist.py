@@ -24,7 +24,7 @@ async def cmd_Whitelist_Invoked(Member, interaction, function, username):
             )
             await interaction.response.send_message(embed = embed)
             print("Adding user to whitelist")
-            pyautogui.write('whitelist add' + username, interval = .1)
+            pyautogui.write('whitelist add ' + username, interval = .1)
             pyautogui.press('enter')
             await interaction.edit_original_response(embed = discord.Embed(
                 title = 'User added to whitelist',
@@ -37,7 +37,7 @@ async def cmd_Whitelist_Invoked(Member, interaction, function, username):
             )
             await interaction.response.send_message(embed = embed)
             print("Removing user from whitelist")
-            pyautogui.write('whitelist remove' + username, interval = .1)
+            pyautogui.write('whitelist remove ' + username, interval = .1)
             pyautogui.press('enter')
             time.sleep(1)
             await interaction.edit_original_response(embed = discord.Embed(
