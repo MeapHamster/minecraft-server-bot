@@ -22,6 +22,7 @@ class MyBot(commands.Bot):
             'cogs.runserver',
             'cogs.stopserver',
             'cogs.whitelist',
+            'cogs.weather',
         ]
 
     async def setup_hook(self):
