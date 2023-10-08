@@ -21,6 +21,8 @@ class MyBot(commands.Bot):
         self.initial_extentions = [
             'cogs.runserver',
             'cogs.stopserver',
+            'cogs.whitelist',
+            'cogs.weather',
         ]
 
     async def setup_hook(self):
