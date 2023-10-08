@@ -1,5 +1,6 @@
 import discord
 # from subprocess import Popen
+import keyword
 import time
 import os
 
@@ -67,6 +68,8 @@ async def cmd_RunServer_Invoked(Member, interaction):
             await interaction.edit_original_response(embed = embed)
 
             time.sleep(10)
+
+        pyautogui.click(button='left', x = 980, y = 710)
         
         await interaction.edit_original_response(embed = embed_2)
 
